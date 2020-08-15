@@ -1,0 +1,128 @@
+* {
+  font-family: sans-serif;
+  /* background-image: url('images/background-img.jpg');
+  background-size: cover;
+  background-repeat: initial; */
+}
+
+main {
+  min-width: 250px;
+  max-width: 450px;
+  margin: auto;
+  margin-top: 2vh;
+  padding: 30px;
+}
+
+/* header {
+  justify-content: space-between;
+} */
+
+section {
+  display: block;
+  float: left;
+  border: .5px solid grey;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+}
+
+button, input[type='radio'] {
+  flex: 1;
+  padding: 5px;
+  font-size: 17px;
+  color: blue;
+  background-image: none;
+  background-color: transparent;
+}
+
+p, form {
+  flex: 1;
+}
+
+label, input[type='radio'] {
+  flex: 0 30%;
+  margin-left: 7px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.heading {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  border: solid 2px;
+  border-bottom: 4px solid rgb(59, 59, 59);
+  border-left: none;
+  border-right: none;
+}
+
+.heading2 {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+  border: solid .5px;
+  border-bottom: 2px solid rgb(83, 83, 83);
+  border-left: none;
+  border-right: none;
+}
+
+.multiple-choices {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  border-top: .5px solid grey;
+}
+
+figure {
+  margin: 4vh 0 3vh 0;
+}
+
+img {
+  width: 100%;
+}
+
+footer {
+  display: block;
+  float: right;
+  text-align: end;
+  background-image: none;
+  background-color: transparent;
+  font-size: 13px;
+  margin-top: 30vh;
+}
+
+a {
+  background-image: none;
+  background-color: transparent;
+}
+
+form {
+  background-image: none;
+  background-color: transparent;
+  display: flex;
+  flex-flow: row wrap;
+  /* align-items: center; */
+  margin-bottom: 1.5vh;
+  /* width: 100%; */
+}
+
+figcaption {
+  font-size: 13px;
+}
+
+.correct {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  background-color: rgb(140, 223, 132);
+  border-radius: 8px;
+  border: 1.5px solid rgb(5, 141, 0);
+  padding: 4px 1px 4px 1px;
+  margin-bottom: 1.5vh;
+}

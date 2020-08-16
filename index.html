@@ -26,23 +26,28 @@
   <link rel="manifest" href="favicon/site.webmanifest"
   />
   <title>Chem Quiz</title>
+  <script src="store.js"></script>
+  <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous'></script>
 </head>
 <body>
   <header class='heading'>
     <h1>Chemistry Quiz</h1>
+    <span id='js-score'></span>
   </header>
   <main>
     <p>This quiz is to analyze your basic knowledge of Chemistry.</p>
-    <figure>
-      <img src='images/start-image.jpg' alt='picture of experiment in process; focus on dispensing of purple liquid via eyedropper to 8x20 set of test tubes.' />
-      <figcaption><span>Photo by <a href="https://unsplash.com/@_louisreed?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Louis Reed</a> on <a href="https://unsplash.com/s/photos/chemistry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span></figcaption>
-    </figure>
+    <figure id='js-start'></figure>
     <button type='button' id='inception'>START</button>
     <div class='multiple-choices'></div>
   </main>
-  <footer>Photo by <a href="https://unsplash.com/@gwrh?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">GIRL WITH RED HAT</a> on <a href="https://unsplash.com/s/photos/chemistry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></footer>
-  <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous'></script>
-  <script src="store.js"></script>
+  
+  <script> 
+    if (STORE.images[13]) {$('#js-start').html(`
+      <img src='${STORE.images[13].src}' alt='${STORE.images[13].alt}' />
+      <figcaption>${STORE.images[13].cap}</figcaption>
+    `)}
+    if (STORE.images[14]) {$('body').append(`<footer>${STORE.images[14].cap}</footer>`)}
+  </script>
   <script src='index.js'></script>  
 </body>
 </html>

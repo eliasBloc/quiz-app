@@ -37,13 +37,14 @@ const STORE = {
         'data point used in statistical analysis of the table of elements.',
         'legacy coefficient; unit-less it\'s a stoichiometric average.',
         'optimal quantization of Heisenberg uncertainty principle.'
-      ]
+      ],
+      answer: 'parameter in the relativistic Dirac equation for an elementary particle.'
     },
     {
       question: 'A molecule is the smallest indivisible portion of a pure chemical substance that has its unique set of chemical properties, that is, ...',
       choices: [
         'a mole amount of the element "cule".',
-        ',in fact, what a molecule is.',
+        'in fact, what a molecule is.',
         'a pure chemical substances can\'t, by definition, have equal chemical properties.',
         'its potential to undergo a certain set of chemical reactions with other substances.'
       ],
@@ -136,14 +137,19 @@ const STORE = {
     {src: 'images/chemical-reaction.jpg', alt: 'picture of experiment in process; hands pouring orange-red liquid mixture into medium-sized laboratory-grade flask.', cap:` Photo by 
     <a href="https://unsplash.com/@alexkondratiev?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Alex Kondratiev</a> on <a href="https://unsplash.com/s/photos/chemical-reaction?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText"> Unsplash
     </a>`},
-    {src: '', alt: '', cap: ''},
-    {src: '', alt: ''},
-    {src: '', alt: ''},
-    {src: '', alt: ''},
-    {src: '', alt: ''},
-    {src: '', alt: ''},
-    {src: '', alt: ''},
-    {src: '', alt: ''},
-    {src: '', alt: ''}
+    {src: 'images/atom-electrons.jpg', alt: 'water droplets converging to a vertical line along the center', cap: 'Photo by <a href="https://unsplash.com/@kevinmueller?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Kevin Mueller</a> on <a href="https://unsplash.com/collections/9938207/texturas?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/massless-vectors.jpg', alt: 'close-up of leaves and the branch in a diagonal pattern amounting to a sort of fractal', cap: 'Photo by <a href="https://unsplash.com/@patwhelen?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Pat Whelen</a> on <a href="https://unsplash.com/s/photos/vector?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/invariant-equation.jpg', alt: 'black and white photo of a professor teaching calculus concept on antique chalkboard', cap: ''},
+    {src: 'images/indivisible-molecule.jpg', alt: 'metal sculpture of a so-called "tesseract" on its edge', cap: 'Photo by <a href="https://unsplash.com/@les_photos_de_raph?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Raphaël Biscaldi</a> on <a href="https://unsplash.com/s/photos/molecule?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/measurement-mole.jpg', alt: 'front and center is a purple solution being poured into a flask', cap: 'Photo by <a href="https://unsplash.com/@_louisreed?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Louis Reed</a> on <a href="https://unsplash.com/s/photos/measurement-mole?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/phases-crystal.jpg', alt: 'triangular prism crystal bathed in purple and blue light', cap: 'Photo by <a href="https://unsplash.com/@lazycreekimages?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Michael Dziedzic</a> on <a href="https://unsplash.com/s/photos/institutional-equation?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/bond-force.jpg', alt: 'two walls with metal connectors simulating the path electricity traveled between the two walls', cap: 'Photo by <a href="https://unsplash.com/@othentikisra?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">israel palacio</a> on <a href="https://unsplash.com/s/photos/connection?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/group-pairs.jpg', alt: 'spherical shape with precise arrangement of scales', cap: 'Photo by <a href="https://unsplash.com/@the_roaming_platypus?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">timJ</a> on <a href="https://unsplash.com/s/photos/pairs?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/energy-heat.jpg', alt: 'distorted purple waves emanating from a void', cap: 'Photo by <a href="https://unsplash.com/@nikhita?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Nikhita Singhal</a> on <a href="https://unsplash.com/s/photos/energy-heat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/quantum-energy.jpg', alt: 'close-up high definition of antique tungsten light-bulb', cap: 'Photo by <a href="https://unsplash.com/@cdubo?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Christian Dubovan</a> on <a href="https://unsplash.com/s/photos/quantum-energy?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/transfer-quantum.jpg', alt: 'reflective sphere hovering above grid of rectangular prism underneath yellow, blue, and purple light', cap: 'Photo by <a href="https://unsplash.com/@lazycreekimages?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Michael Dziedzic</a> on <a href="https://unsplash.com/s/photos/quantum-transfer?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/easy-heat.jpg', alt: 'high-definition image of amber sparks traveling towards the camera', cap: 'Photo by <a href="https://unsplash.com/@funjabi?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Sandeep Singh</a> on <a href="https://unsplash.com/s/photos/easy-heat?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/start-image.jpg', alt: 'picture of experiment in process; focus on dispensing of purple liquid via eyedropper to 8x20 set of test tubes.', cap: 'Photo by <a href="https://unsplash.com/@_louisreed?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Louis Reed</a> on <a href="https://unsplash.com/s/photos/chemistry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'},
+    {src: 'images/background-img.jpg', alt: 'N/A', cap: 'Photo by <a href="https://unsplash.com/@gwrh?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">GIRL WITH RED HAT</a> on <a href="https://unsplash.com/s/photos/chemistry?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a>'}
   ]
 };

@@ -18,7 +18,7 @@ function renderStartPage() {
       <figcaption>${STORE.images[13].cap}</figcaption>
     </figure>
     <button type='button' id='inception'>START</button>
-    <div class='multiple-choices'></div>
+    <div class='multiple-choices js-multiple-choices'></div>
   `)
 }
 
@@ -32,30 +32,30 @@ function generateStrings() {
         />
         <figcaption>${STORE.images[STORE.currentQuestion].cap}</figcaption>
       </figure>
-      <div class='multiple-choices'>
+      <div class='multiple-choices js-multiple-choices'>
         <p><strong>${STORE.questions[STORE.currentQuestion].question}</strong></p>
         <form id='js-response'>
+          <input type='radio' name='js-question-text' id='${STORE.questions[STORE.currentQuestion].choices[0]}'  class='js-input-radio' value='${STORE.questions[STORE.currentQuestion].choices[0]}' />  
           <label for='${STORE.questions[STORE.currentQuestion].choices[0]}'>${STORE.questions[STORE.currentQuestion].choices[0]}</label>
-          <input type='radio' name='js-question-text' id='${STORE.questions[STORE.currentQuestion].choices[0]}'  class='js-input-radio' value='${STORE.questions[STORE.currentQuestion].choices[0]}' />
-          <label for='${STORE.questions[STORE.currentQuestion].choices[1]}'>${STORE.questions[STORE.currentQuestion].choices[1]}</label>
           <input type='radio' name='js-question-text' id='${STORE.questions[STORE.currentQuestion].choices[1]}'  class='js-input-radio' value='${STORE.questions[STORE.currentQuestion].choices[1]}' />
-          <label for='${STORE.questions[STORE.currentQuestion].choices[2]}'>${STORE.questions[STORE.currentQuestion].choices[2]}</label>
+          <label for='${STORE.questions[STORE.currentQuestion].choices[1]}'>${STORE.questions[STORE.currentQuestion].choices[1]}</label>
           <input type='radio' name='js-question-text' id='${STORE.questions[STORE.currentQuestion].choices[2]}'  class='js-input-radio' value='${STORE.questions[STORE.currentQuestion].choices[2]}' />
-          <label for='${STORE.questions[STORE.currentQuestion].choices[3]}'>${STORE.questions[STORE.currentQuestion].choices[3]}</label>
+          <label for='${STORE.questions[STORE.currentQuestion].choices[2]}'>${STORE.questions[STORE.currentQuestion].choices[2]}</label>
           <input type='radio' name='js-question-text' id='${STORE.questions[STORE.currentQuestion].choices[3]}'  class='js-input-radio' value='${STORE.questions[STORE.currentQuestion].choices[3]}' />
+          <label for='${STORE.questions[STORE.currentQuestion].choices[3]}'>${STORE.questions[STORE.currentQuestion].choices[3]}</label>
           <button type='submit' id='js-next'>GO</button>
         </form>        
       </div>
     </section>`
   } else {
     return `
-    <section>
+    <section class='results-page'>
       <h3>Results of Chemistry Quiz</h3>
       <form id='js-end'>
         <p id='score-sheet'><strong>Score: <i>${Math.floor(STORE.score*100/13)}%</i></strong></p>
         <button type='submit' id='end'>Restart</button>
       </form>
-      <div class='multiple-choices'></div>
+      <div class='multiple-choices js-multiple-choices'></div>
     </section>`
   }
 }
@@ -63,7 +63,7 @@ function generateStrings() {
 function renderQuestionPage() {
   // when user clicks next button, new question and results page
   if (STORE.currentQuestion <= 12) {
-    $('#js-score').html(`<span>Score: ${Math.floor(STORE.score*100/13)}%</span>`);
+    $('#js-score').html(`<span><i>Score: ${Math.floor(STORE.score*100/13)}%</i></span>`);
     $('main').html(`
       <header class='container'>
         <h2>
@@ -115,20 +115,19 @@ function renderFeedbackPage(choice) {
     STORE.score++;
     $('#js-next').addClass('hidden');
     $('#js-score').html(`<span>Score: ${Math.floor(STORE.score*100/13)}%</span>`);
-    $('.multiple-choices').append(`
+    $('.js-multiple-choices').append(`
       <section class='feedback correct'>
-        <header>Correct</header>
-        <p>What you submitted was correct!</p>
+        <header><h3>Correct!</h3></header>
+        <p>${STORE.questions[STORE.currentQuestion].answer}</p>
         <button type='button' id='js-new-question'>NEXT</button>
       </section>
     `)
   }
   else {
     $('#js-next').addClass('hidden');
-    $('.multiple-choices').append(`
+    $('.js-multiple-choices').append(`
       <section class='feedback incorrect'>
-        <header>Incorrect</header>
-        <p>What you submitted was incorrect.</p>
+        <header><h3>Incorrect</h3></header>
         <p>The correct answer was: </p> 
         <p>${STORE.questions[STORE.currentQuestion].answer}</p>
         <button type='button' id='js-new-question'>NEXT</button>

@@ -8,9 +8,10 @@ Analogous: #78d599;
 Analogous: #005c9c;
 
 font-family: 'Playfair Display', serif;
-font-family: 'Poppins', sans-serif;
+font-family: 'Montserrat', sans-serif;
 */ 
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Content Elements */
 body {
   background-image: url('images/background-img.jpg');
   background-size: cover;
@@ -18,14 +19,12 @@ body {
 }
 
 main {
-/*   margin: auto;
-  margin-top: 1vh; */
-  padding: 0 2.5vh;  
+  padding: 0 1.25vh;  
 }
 
 section {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: center;
   padding-top: 2vh;
@@ -35,144 +34,143 @@ section {
   border-top: none;
 }
 
-section.feedback.incorrect header {
-  color: rgb(141, 0, 0)
+footer {
+  display: block;
+  text-align: right;
+  font-size: 13px;
+  margin-top: 24vh;
 }
 
-section.feedback.correct header {
-  color: rgb(5, 141, 0);
-}
-
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
+.heading {
   text-align: center;
+  border: 4px solid #7c0014;
+  border-left: none;
+  border-right: none;
+  padding-bottom: 2vh;
 }
 
-h1 {color: #00836d;}
-h2 {color: #005c9c;}
-h3 {color: #00836d;}
+.multiple-choices {
+  width: 89%
+}
 
-section button {
-  text-align: center;
-  background-color: #78d599;
-  color: #00836d;
-  font-family: 'Poppins', sans-serif;
-  border: 1.5px ridge #7c0014;
-  border-radius: 1.5vh;
+.feedback {
+  border-radius: 8px;
   padding: 1vh;
-  flex: 0 50%;
-}
-
-button:hover {cursor: pointer;background-color: #7c0014;}
-button:active  {cursor: pointer;background-color: #005c9c;}
-
-.incorrect button {
-  background-color: transparent;
-  border: 2px solid #7c0014;
-  margin: 0  0 1vh 0;
-}
-
-.correct button {
-  background-color: transparent;
-  border: 2px solid #00836d;
-  margin: 0 0 1vh 0;
-}
-
-.incorrect button:hover {cursor: pointer; background-color: #7c0014;}
-.correct button:hover {cursor: pointer; background-color: #00836d;}
-
-main section button {
-  margin: 4vh 0 2vh 0;
-}
-
-main section .multiple-choices button {
-  margin: 1vh 0;
+  margin: 2.5vh 0 1.5vh 0;
+  text-align: center;
 }
 
 .correct {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
   background-color: rgb(140, 223, 132);
-  border-radius: 8px;
   border: 1.5px solid rgb(5, 141, 0);
-  padding: 8px 3px 4px 3px;
-  margin-bottom: 1.5vh;
+  color: rgb(5, 141, 0);
 }
 
 .incorrect {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  justify-content: left;
   background-color: rgb(223, 132, 132);
-  border-radius: 8px;
   border: 1.5px solid rgb(141, 0, 0);
-  padding: 8px 5px 5px 3px;
-  margin-bottom: 1.5vh;
-}
-
-.incorrect header h3, .incorrect p, .incorrect button, .correct header h3, .correct p, .correct button {
-  color: #000000;
-}
-
-.correct p, .incorrect p, .incorrect h3, .correct h3 {
-  margin-bottom: 0;
-}
-
-#score-sheet {
-  margin-top: 7vh;
-}
-
-p {
-  flex: 1;
-  color: #005c9c;
-  font-family: 'Poppins', sans-serif;
-}
-
-strong {
-  font-family: 'Poppins', sans-serif;
-}
-
-i {
-  margin-bottom: 1vh;
-}
-
-span {
-  font-family: 'Playfair Display', serif;
-  color: #005c9c;
+  color: rgb(141, 0, 0);
 }
 
 .hidden {
   display: none;
 }
 
-.heading {
-  margin: auto;
-  text-align: center;
-  border: 4px solid #7c0014;
-  border-left: none;
-  border-right: none;
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Text Elements */
+h1 {color: #00836d;}
+h2 {color: #005c9c;}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
 }
 
-/* .container {
-  flex: 0 50%;
-} */
+h3 {
+  margin-bottom: 0;
+}
 
-/* .heading2 {
-  max-width: 600px;
-  margin: auto;
-  text-align: center;
-  border: solid .5px;
-  border-bottom: 2px solid rgb(83, 83, 83);
-  border-left: none;
-  border-right: none;
-} */
+.correct p, .incorrect p {
+  margin-bottom: 0;
+  color: #000000;
+}
 
-.multiple-choices {
+p, strong {
   flex: 1;
+  color: #005c9c;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
 }
 
+strong {
+  font-size: 19px;
+  display: block;
+  text-align: left;
+  width: 89%;
+  margin: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+span {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #005c9c;
+}
+
+figcaption {
+  font-size: 10px;
+  font-family: 'Playfair Display', serif;
+  text-align: left;
+  padding-left: 4vh;
+  background-image: url('images/background-img.jpg');
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Start Quiz, Next Question Button */
+button[type='button'] {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  border: .8px ridge #78d599;
+  border-radius: 1.5vh;
+  flex: 0 50%;
+}
+
+button[type='button']:hover {cursor: pointer;background-color: #005c9c;}
+button[type='button']:active {cursor: pointer;background-color: #ffffff}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit Answer, Restart Quiz Button */
+button[type='submit'] {
+  text-align: center;
+  background-color: #00836d;
+  color: #78d599;
+  font-family: 'Montserrat', sans-serif;
+  border: .8px ridge #78d599;
+  border-radius: 1.5vh;
+  flex: 0 50%;
+}
+
+button[type='submit']:hover {cursor: pointer;background-color: #005c9c;}
+button[type='submit']:active {cursor: pointer;background-color: #005c9c;}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Start Quiz Button */
+section button {
+  margin: 4vh 0 2vh 0;
+  flex: 0 25%;
+  background-color: #00836d;
+  color: #78d599;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit Answer Button, Next Question Button */
+section .multiple-choices button {
+  margin: 2vh 0 1vh 0;
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Next Question Button */
+.incorrect button {color: #7c0014; border: 2px ridge #7c0014; background-color: rgb(223, 132, 132);}
+.correct button {color: #00836d; border: 2px ridge #00836d; background-color: rgb(140, 223, 132);}
+
+.incorrect button:hover {background-color: #7c0014; color: rgb(223, 132, 132);}
+.correct button:hover {background-color: #00836d; color: #78d599;}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Interactive Elements */
 figure {
   flex: 1;
   margin-top: 0;
@@ -181,15 +179,6 @@ figure {
 
 img {
   width: 100%;
-  background-attachment: scroll;
-}
-
-figcaption {
-  font-size: 10px;
-  font-family: 'Playfair Display', serif;
-  text-align: left;
-  padding-left: 8vh;
-  background-image: url('images/background-img.jpg');
 }
 
 form {
@@ -201,24 +190,15 @@ form {
 }
 
 label {
-  font-family: 'Poppins', sans-serif;
-  /* font-size: 17px; */
-  flex: 0 94%;
+  font-family: 'Montserrat', sans-serif;
+  flex: 0 91%;
   margin: .75vh 0 .75vh .8vh;
   color: #00836d;
 }
 
 input[input='radio'] {
-  flex: 0 5%;
+  flex: 0 9%;
   margin: 1.5vh 0 0 0;
-}
-
-footer {
-  display: block;
-  float: right;
-  text-align: end;
-  font-size: 13px;
-  margin-top: 30vh;
 }
 
 a { text-decoration: none;}
@@ -227,57 +207,134 @@ a:visited { color: #00836d; }
 a:hover   { color: #78d599; }
 a:active  { color: #9ac277; }
 
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mobile First Approach */
+@media all and (orientation: landscape) {
+  section {
+    margin: auto;
+    max-width: 100%;
+    flex-flow: row wrap;
+    text-align: center;
+  }
 
+  .feedback {
+    margin: auto;
+    margin-top: 2.5vh;
+    margin-bottom: 1.5vh;
+    flex-flow: column wrap;
+  }
 
+  h2 {
+    flex: 0 40%;
+  }
 
+  form {
+    text-align: left;
+  }
 
-@media (orientation: landscape) {
+  figure {
+    flex: 0 45%;
+  }
+
+  label {
+    flex: 0 96%;
+  }
+}
+
+@media all and (min-width: 811px) and (min-height: 374px) and (orientation: landscape) {
   section {
     margin: auto;
     max-width: 85%;
     flex-flow: row wrap;
-    align-self: center;
+  }
+
+  .feedback {
+    margin: auto;
+    margin-top: 2.5vh;
+    margin-bottom: 1.5vh;
+  }
+
+  h2 {
+    flex: 0 40%;
   }
 
   figure {
-    width: 59%;
-    flex: 0 42%;
+    flex: 0 45%;
   }
 
-  p {
-    flex: 0 41%;
-  }
-
-  main section button {
-    flex: 0 25%;
-  }
-
-  .multiple-choices {
-    width: 58%;
+  label {
+    flex: 0 97%;
   }
 }
-@media (min-width: 1100px) {
+
+@media all and (min-width: 767px) and (min-height: 1023px) {
   section {
     margin: auto;
     max-width: 92%;
-    flex-flow: row wrap;
-    align-self: center;
   }
 
-  figure {
-    width: 80%;
-    flex: 0 42%;
+  .results-page {
+    flex-flow: column wrap;
   }
 
   p {
     flex: 0 41%;
   }
+  
+  figure {
+    width: 68%;
+  }
 
-  main section button {
-    flex: 0 25%;
+  label {
+    flex: 0 95%;
+    margin: 2vh 0 2vh 1.5vh;
+    color: #00836d;
+  }
+
+  input[input='radio'] {
+    flex: 0 5%;
+    margin: 1.5vh 0 0 0;
   }
 
   .multiple-choices {
-    width: 80%;
+    width: 87%;
+  }
+
+  .feedback {
+    margin: auto;
+    margin-top: 2.5vh;
+    margin-bottom: 1.5vh;
+  }
+}
+
+@media all and (min-width: 1365px) and (min-height: 1023px) and (orientation: landscape) {
+  section {
+    margin: auto;
+    max-width: 92%;
+  }
+
+  .results-page {
+    flex-flow: column wrap;
+  }
+
+  p {
+    flex: 0 50%;
+  }
+  
+  figure {
+    width: 68%;
+  }
+
+  label {
+    flex: 0 97%;
+  }
+
+  .multiple-choices {
+    width: 87%;
+  }
+
+  .feedback {
+    margin: auto;
+    margin-top: 2.5vh;
+    margin-bottom: 1.5vh;
   }
 }

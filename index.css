@@ -1,11 +1,14 @@
 /* Chemistry Quiz Cascading Style Sheet
-
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mobile First Approach */
+/*
 Primary color: #00836d;
 
 Complementary: #7c0014;
 
 Analogous: #78d599;
 Analogous: #005c9c;
+
+red-background: #c76166;
 
 font-family: 'Playfair Display', serif;
 font-family: 'Montserrat', sans-serif;
@@ -16,10 +19,14 @@ body {
   background-image: url('images/background-img.jpg');
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-flow: row wrap;
 }
 
 main {
-  padding: 0 1.25vh;  
+  flex: 0 100%;
+  padding: 0 1.5vh;
+  text-align: center;  
 }
 
 section {
@@ -27,47 +34,47 @@ section {
   flex-flow: column wrap;
   align-items: center;
   justify-content: center;
-  padding-top: 2vh;
   border: .5px solid #7c0014;
   border-left: none;
   border-right: none;
-  border-top: none;
+}
+
+header {
+  flex: 0 100%;
+  text-align: center;
 }
 
 footer {
-  display: block;
-  text-align: right;
-  font-size: 13px;
-  margin-top: 24vh;
-}
-
-.heading {
-  text-align: center;
-  border: 4px solid #7c0014;
-  border-left: none;
-  border-right: none;
-  padding-bottom: 2vh;
+  flex: 0 100%;
+  text-align: end;
+  font-family: 'Playfair Display', serif;
+  font-size: .7em;
 }
 
 .multiple-choices {
-  width: 89%
+  width: 100%;
+  text-align: left;
+  flex: 0 100%;
 }
 
 .feedback {
   border-radius: 8px;
   padding: 1vh;
-  margin: 2.5vh 0 1.5vh 0;
-  text-align: center;
+  width: 70%;
+  margin: auto;
+  margin-top: 2.5vh;
+  margin-bottom: 1.5vh;
+  flex-flow: row wrap;
 }
 
 .correct {
-  background-color: rgb(140, 223, 132);
+  background-color: #78d599;
   border: 1.5px solid rgb(5, 141, 0);
   color: rgb(5, 141, 0);
 }
 
 .incorrect {
-  background-color: rgb(223, 132, 132);
+  background-color: #c76166;
   border: 1.5px solid rgb(141, 0, 0);
   color: rgb(141, 0, 0);
 }
@@ -77,31 +84,43 @@ footer {
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Text Elements */
-h1 {color: #00836d;}
-h2 {color: #005c9c;}
+h1 {color: #00836d}
+h2 {color: #005c9c;flex:0 40%;}
 
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
 }
 
-h3 {
-  margin-bottom: 0;
-}
-
-.correct p, .incorrect p {
-  margin-bottom: 0;
-  color: #000000;
+.results-page h3 {
+  color: #00836d;
+  text-align: left;
 }
 
 p, strong {
   flex: 1;
   color: #005c9c;
   font-family: 'Montserrat', sans-serif;
-  text-align: center;
+  /* text-align: center; */
+}
+
+/* footer p {
+  text
+} */
+
+.feedback p, .feedback i {
+  text-align: left;
+  margin: 1vh 0 0 0;
+  flex: 0 100%;
+  color: #000000;
+  font-size: .9em;
+}
+
+.feedback h3 {
+  margin: 1vh 0 0 0;
 }
 
 strong {
-  font-size: 19px;
+  font-size: 1.2em;
   display: block;
   text-align: left;
   width: 89%;
@@ -112,12 +131,12 @@ strong {
 
 span {
   font-family: 'Playfair Display', serif;
-  font-size: 18px;
+  font-size: 1.14em;
   color: #005c9c;
 }
 
 figcaption {
-  font-size: 10px;
+  font-size: .7em;
   font-family: 'Playfair Display', serif;
   text-align: left;
   padding-left: 4vh;
@@ -127,10 +146,14 @@ figcaption {
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Start Quiz, Next Question Button */
 button[type='button'] {
   text-align: center;
+  background-color: #00836d;
+  color: #78d599;
   font-family: 'Montserrat', sans-serif;
   border: .8px ridge #78d599;
   border-radius: 1.5vh;
-  flex: 0 50%;
+  margin: 2vh 0 1vh 0;
+  flex: 0 20%;
+  padding: 1.5vh;
 }
 
 button[type='button']:hover {cursor: pointer;background-color: #005c9c;}
@@ -144,37 +167,31 @@ button[type='submit'] {
   font-family: 'Montserrat', sans-serif;
   border: .8px ridge #78d599;
   border-radius: 1.5vh;
-  flex: 0 50%;
+  flex: 0 20%;
+  padding: 1.5vh;
 }
 
 button[type='submit']:hover {cursor: pointer;background-color: #005c9c;}
-button[type='submit']:active {cursor: pointer;background-color: #005c9c;}
-
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Start Quiz Button */
-section button {
-  margin: 4vh 0 2vh 0;
-  flex: 0 25%;
-  background-color: #00836d;
-  color: #78d599;
-}
+button[type='submit']:active {cursor: pointer;background-color: #ffffff}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Submit Answer Button, Next Question Button */
 section .multiple-choices button {
-  margin: 2vh 0 1vh 0;
+  margin: 1.5vh 0 0 0;
 }
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Next Question Button */
-.incorrect button {color: #7c0014; border: 2px ridge #7c0014; background-color: rgb(223, 132, 132);}
-.correct button {color: #00836d; border: 2px ridge #00836d; background-color: rgb(140, 223, 132);}
+.incorrect button {border: 2px ridge #7c0014;}
+.correct button {border: 2px ridge #00836d;}
 
-.incorrect button:hover {background-color: #7c0014; color: rgb(223, 132, 132);}
+.incorrect button:hover {background-color: #7c0014; color: #c76166;}
 .correct button:hover {background-color: #00836d; color: #78d599;}
 
 /*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Interactive Elements */
 figure {
-  flex: 1;
+  flex: 0 68%;
   margin-top: 0;
   border: .8px solid #7c0014;
+  width: 76%;
 }
 
 img {
@@ -186,155 +203,261 @@ form {
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  padding: 0 .5vh;
+  padding: 0;
+  width: 100%;
+  margin: 0;
 }
 
 label {
   font-family: 'Montserrat', sans-serif;
-  flex: 0 91%;
-  margin: .75vh 0 .75vh .8vh;
+  font-size: 1.2em;
+  flex: 0 89%;
+  margin: .75vh 0 .75vh .25vh;
   color: #00836d;
 }
 
-input[input='radio'] {
-  flex: 0 9%;
-  margin: 1.5vh 0 0 0;
+input[type='radio'] {
+  flex: 0 10%;
 }
 
 a { text-decoration: none;}
 a:link    { color: #005c9c; }
-a:visited { color: #00836d; }
+a:visited { color: #c76166; }
 a:hover   { color: #78d599; }
 a:active  { color: #9ac277; }
 
-/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Mobile First Approach */
-@media all and (orientation: landscape) {
+/*--------------------------------------------Tablets-----------------------------*/
+@media all and (orientation: landscape) /* and (max-height: 448px) and (max-width: 824px) */ {
   section {
-    margin: auto;
-    max-width: 100%;
     flex-flow: row wrap;
-    text-align: center;
+    margin-bottom: 6vh;
+    padding-bottom: 3vh;
   }
 
   .feedback {
-    margin: auto;
-    margin-top: 2.5vh;
-    margin-bottom: 1.5vh;
-    flex-flow: column wrap;
+    /* width: 39%; */
+    flex: 0 40%;
   }
 
-  h2 {
+  .multiple-choices {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  h2{
+    flex: 0 36%;
+  }
+
+  p {
+    margin-left: 3vh;
+    flex: 0 100%;
+  }
+
+  .start-section p {
+    flex: 0 30%;
+  }
+
+  .results-page p {
+    flex: 0 50%;
+  }
+
+  section button[type='button'] {
+    margin: 6vh 3vh 3vh 0;
+  }
+
+  .feedback p, .feedback i, .feedback h3, section .multiple-choices button {
+    margin: 3vh 0 0 0;
+  }
+
+  .feedback h3 {
+    margin-top: 0;
+  }
+
+  .results-page h3 {
     flex: 0 40%;
+  }
+
+  .results-page form {
+    flex: 0 100%;
+    margin: auto;
+  }
+
+  figure {
+    flex: 0 49%; 
+    width: 70%;
+    margin-top: 2vh;
   }
 
   form {
-    text-align: left;
-  }
-
-  figure {
-    flex: 0 45%;
-  }
-
-  label {
-    flex: 0 96%;
-  }
-}
-
-@media all and (min-width: 811px) and (min-height: 374px) and (orientation: landscape) {
-  section {
-    margin: auto;
-    max-width: 85%;
-    flex-flow: row wrap;
-  }
-
-  .feedback {
+    flex: 0 55%;
     margin: auto;
     margin-top: 2.5vh;
     margin-bottom: 1.5vh;
   }
 
+  .results-page {
+    width: 70%;
+    margin: auto;
+  }
+}
+ 
+/*-------------------------------------Small Tablets------------------------------*/
+@media all and (min-height: 599px) and (min-width: 449px) and (orientation: portrait) and (max-width: 1023px) {
+  section {
+    flex-flow: row wrap;
+  }
+  
+  .start-section {
+    flex-flow: column wrap;
+  }
+
+  .feedback {
+    width: 45%;
+  }
+
+  .multiple-choices {
+    flex: 0 100%;
+  }
+
+  h1 {font-size: 1.6em;} 
+  
   h2 {
+    font-size: 1.4em;
+    margin: 2vh 0 .25vh 0;
+    flex: 0 20%;
+  }
+  
+  .feedback h3 {font-size: 1.3em;}
+
+  .results-page p {
+    flex: 0 50%;
+  }
+  
+  p, i, strong, label {font-size: 1em;} span {font-size: .9em} figcaption {font-size: .5em} .feedback button[type='button'] {font-size: .85em;}
+
+  .results-page h3, .results-page form {
     flex: 0 40%;
   }
 
   figure {
-    flex: 0 45%;
-  }
-
-  label {
-    flex: 0 97%;
+    width: 60%;
+    flex: 1;
+    margin-top: 2vh;
   }
 }
 
-@media all and (min-width: 767px) and (min-height: 1023px) {
-  section {
-    margin: auto;
-    max-width: 92%;
-  }
+/*------------------------------------- Big Tablets-------------------------------*/
+@media all and (min-width: 1024px) and (orientation: portrait) {
+  section {flex-flow: row wrap;}
 
-  .results-page {
-    flex-flow: column wrap;
-  }
-
-  p {
-    flex: 0 41%;
-  }
-  
-  figure {
-    width: 68%;
-  }
-
-  label {
-    flex: 0 95%;
-    margin: 2vh 0 2vh 1.5vh;
-    color: #00836d;
-  }
-
-  input[input='radio'] {
-    flex: 0 5%;
-    margin: 1.5vh 0 0 0;
-  }
+  .start-section {flex-flow: column wrap;}
 
   .multiple-choices {
-    width: 87%;
+    display: flex;
+    flex-flow: row wrap;
   }
 
-  .feedback {
-    margin: auto;
-    margin-top: 2.5vh;
-    margin-bottom: 1.5vh;
-  }
-}
+  h1 {font-size: 1.6em;} h2 {font-size: 1.4em;margin-left: 2vh;flex: 0 21%;}
+  
+  .feedback h3 {font-size: 1.3em;}
 
-@media all and (min-width: 1365px) and (min-height: 1023px) and (orientation: landscape) {
-  section {
-    margin: auto;
-    max-width: 92%;
-  }
-
-  .results-page {
-    flex-flow: column wrap;
+  .results-page h3, .results-page form {
+    flex: 0 40%;
   }
 
   p {
+    margin-left: 3vh;
+    flex: 0 100%;
+  }
+
+  span{
+    font-size: 2em;
+  }
+
+  .results-page p {
     flex: 0 50%;
   }
+
+  p, i, strong, label {
+    font-size: 1em;
+  } 
+    
+  span {font-size: .9em} 
   
+  figcaption {font-size: .5em}
+
+  .feedback button[type='button'] {font-size: .85em;}
+
   figure {
-    width: 68%;
+    flex: 0 49%; 
+    width: 70%;
+    margin-top: 2vh;
   }
 
-  label {
-    flex: 0 97%;
-  }
-
-  .multiple-choices {
-    width: 87%;
-  }
-
-  .feedback {
+  form {
+    flex: 0 60%;
     margin: auto;
     margin-top: 2.5vh;
     margin-bottom: 1.5vh;
+  }
+
+  .feedback {
+    text-align: center;
+    padding: 0 1vh;
+    flex: 0 30%;
+  }
+
+  .feedback h3 {
+    flex: 0 100%;
+  }
+
+  .feedback p, .feedback i, section .multiple-choices button {
+    margin: 1.5vh 0 0 .8vh;
+  }
+
+  .feedback button[type='button'] {
+    flex: 0 50%;
+    padding: 0;
+    margin-left: 0;
+  }
+}
+
+/*------------------------------------ Monitors and Landscape Big Tablets ---------*/
+@media all and (min-width: 1365px) {
+  h2 {
+    flex: 0 100%;
+  }
+
+  P {
+    flex: 0 100%;
+  }
+
+  figure {
+    flex: 0 40%;
+    width: 100%;
+  }
+
+  .multiple-choices {
+    flex: 0 50%;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .feedback {
+    text-align: center;
+    flex: 0 100%;
+  }
+
+  form {
+    flex: 0 100%;
+    margin: 2.5vh 0 1.5vh 3vh;
+  }
+
+  .feedback p, .feedback i, section .multiple-choices button {
+    margin-top: 1.5vh;
+  }
+
+  .feedback button[type='button'] {
+    padding: 0;
   }
 }

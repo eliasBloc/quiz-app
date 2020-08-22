@@ -7,14 +7,7 @@
     name='viewport' 
     content='width=device-width, initial-scale=1.0'
   />
-  <link 
-    href='index.css' rel='stylesheet' 
-    type='text/css'
-  />
   <link href='https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@400;600&display=swap' rel='stylesheet' type='text/css'
-  />
-  <link
-    href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' rel='stylesheet' type='text/css'
   />
   <link rel='apple-touch-icon' sizes='180x180' 
     href='favicon/apple-touch-icon.png'
@@ -32,15 +25,15 @@
   <script src='https://code.jquery.com/jquery-3.5.1.slim.min.js' integrity='sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=' crossorigin='anonymous'></script>
 </head>
 <body>
-  <header class='heading'>
+  <header>
     <h1>Chemistry Quiz</h1>
     <span id='js-score'></span>
   </header>
   <main>
-    <section>
+    <section class='start-section'>
       <p>This quiz is to analyze your basic knowledge of Chemistry.</p>
       <figure id='js-start'></figure>
-      <button type='button' id='inception'>START</button>
+      <button type='button' id='js-inception'>START</button>
     </section>
     <div class='multiple-choices' id='js-multiple-choices'></div>
   </main>
@@ -50,8 +43,12 @@
       <img src='${STORE.images[13].src}' alt='${STORE.images[13].alt}' />
       <figcaption>${STORE.images[13].cap}</figcaption>
     `)}
-    if (STORE.images[14]) {$('body').append(`<footer>${STORE.images[14].cap}</footer>`)}
+    if (STORE.images[14]) {$('body').append(`<footer><p>${STORE.images[14].cap}</p> <p>Copyright 2020 JEM</p></footer>`)}
   </script>
-  <script src='index.js'></script>  
+  <script src='index.js'></script>
+  <link
+    href='https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css' rel='stylesheet' type='text/css'
+  />
+  <link href='index.css' rel='stylesheet' type='text/css' />  
 </body>
 </html>

@@ -68,6 +68,27 @@ function generateStrings() {
   }
 }
 
+function generateFeedbackStrings (choice) {
+  if (choice === STORE.questions[STORE.currentQuestion].answer) {
+    $('.js-multiple-choices').append(`
+      <section class='feedback correct'>
+        <h3>Correct!</h3>
+        <i>"${STORE.questions[STORE.currentQuestion].answer}"</i>
+        <button type='button' id='js-new-question'>NEXT</button>
+      </section>
+    `)
+  } else {
+    $('.js-multiple-choices').append(`
+    <section class='feedback incorrect'>
+      <h3>Incorrect</h3>
+      <p>The correct answer was: </p> 
+      <i>"${STORE.questions[STORE.currentQuestion].answer}"</i>
+      <button type='button' id='js-new-question'>NEXT</button>
+    </section>
+    `)
+  }
+}
+
 function renderQuestionPage() {
   // when user clicks next button, new question and results page
   if (STORE.currentQuestion <= 12) {
@@ -112,24 +133,11 @@ function renderFeedbackPage(choice) {
     STORE.score++;
     $('#js-next').addClass('hidden');
     $('#js-score').html(`<span>Score: ${Math.floor(STORE.score*100/13)}%</span>`);
-    $('.js-multiple-choices').append(`
-      <section class='feedback correct'>
-        <h3>Correct!</h3>
-        <i>"${STORE.questions[STORE.currentQuestion].answer}"</i>
-        <button type='button' id='js-new-question'>NEXT</button>
-      </section>
-    `)
+    generateFeedbackStrings(choice); 
   }
   else {
     $('#js-next').addClass('hidden');
-    $('.js-multiple-choices').append(`
-      <section class='feedback incorrect'>
-        <h3>Incorrect</h3>
-        <p>The correct answer was: </p> 
-        <i>"${STORE.questions[STORE.currentQuestion].answer}"</i>
-        <button type='button' id='js-new-question'>NEXT</button>
-      </section>
-    `)
+    generateFeedbackStrings(choice)
   }
 }
 
